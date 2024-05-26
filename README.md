@@ -12,3 +12,6 @@ My dotfiles
 
 #### Font
 - mononoki-nerd-font
+- brew search font- | grep mononoki
+- brew install --cask font-nerd-mononoki-font
+
