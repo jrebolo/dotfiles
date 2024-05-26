@@ -1,0 +1,21 @@
+import = ["~/.config/alacritty/gruvbox-material/gruvbox-material.toml"]
+live_config_reload = true
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 18.0
+
+[window]
+decorations = "buttonless"
+dynamic_padding = false
+opacity = 1.0
+
+[window.padding]
+x = 25
+y = 20
+
+[font.normal]
+family = "Mononoki Nerd Font"
+
