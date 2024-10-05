@@ -5,21 +5,11 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Plugins
 zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
-
-# Load completions
-autoload -U compinit && compinit
 
 # Keybindings
 # ^ is control
-# ^f accepet
-# ^a begining
-# ^b back word
 bindkey -e
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
 
 # History
 HISTSIZE=5000
@@ -34,16 +24,10 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# completion style
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-a}'
-zstyle ':completion:*' list-color "${(s.:.)LS_COLORS}"
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-
 # Aliases
 alias ls='ls --color'
 alias nv='nvim'
-alias nvcf='nvim ~/.zshrc'
+alias zsc='nvim ~/.zshrc' # zshrc config alias
 
 # shell integration fzf 
 eval "$(fzf --zsh)"
@@ -61,4 +45,4 @@ git_prompt() {
 
 # This is specific to zsh but you could call $(git_prompt) in your .bashrc PS1 too.
 setopt PROMPT_SUBST
-PROMPT='%B%{$fg[green]%}%n@%{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[yellow]%}$(git_prompt)%{$reset_color%} %(?.$.%{$fg[red]%}$)%b '
+PROMPT='%B%{$fg[green]%}%n@%{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[yellow]%}$(git_prompt)%{$reset_color%}'$'\n''%(?.$.%{$fg[red]%}$)%b'

@@ -30,15 +30,13 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
   {
-      'sainnhe/gruvbox-material',
-      lazy = false,
-      priority = 1000,
-      config = function()
-        -- Optionally configure and load the colorscheme
-        -- directly inside the plugin declaration.
-        vim.g.gruvbox_material_enable_italic = true
-        vim.cmd.colorscheme('gruvbox-material')
-      end
+    'sainnhe/sonokai',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.sonokai_enable_italic = true
+      vim.cmd.colorscheme('sonokai')
+    end
     },
   {
     "nvim-tree/nvim-tree.lua",
@@ -61,6 +59,6 @@ require("lazy").setup(plugins, opts)
 vim.o.background = "dark" -- or "light" for light mode
 
 -- bufferline
-vim.opt.termguicolors = true
+-- vim.opt.termguicolors = true
 
 require("bufferline").setup{}
